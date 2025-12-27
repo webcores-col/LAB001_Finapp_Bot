@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lista completa de comandos de Finance Bot con búsqueda instantánea">
+  <title>Comandos - Finance Bot</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    .search-container {
+      max-width: 600px;
+      margin: 0 auto var(--space-2xl);
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: var(--space-md) var(--space-lg);
+      padding-left: 3rem;
+      font-size: 1.125rem;
+      border: 2px solid var(--border);
+      border-radius: var(--radius-full);
+      background: var(--surface);
+      color: var(--text-primary);
+      transition: all var(--transition-base);
+      font-family: var(--font-sans);
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px var(--primary-light);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: var(--space-lg);
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-tertiary);
+      font-size: 1.25rem;
+    }
+
+    .command-card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      border: 1px solid var(--border-light);
+      margin-bottom: var(--space-md);
+      transition: all var(--transition-base);
+    }
+
+    .command-card:hover {
+      border-color: var(--primary-light);
+      box-shadow: var(--shadow-md);
+    }
+
+    .command-card.hidden {
+      display: none;
+    }
+
+    .command-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: var(--space-md);
+    }
+
+    .command-name {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .no-results {
+      text-align: center;
+      padding: var(--space-3xl);
+      color: var(--text-secondary);
+      display: none;
+    }
+
+    .no-results.show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="/" class="navbar-brand">
+        <div class="navbar-logo">💰</div>
+        <span>Finance Bot</span>
+      </a>
+      <ul class="navbar-nav">
+        <li><a href="/" class="navbar-link">Inicio</a></li>
+        <li><a href="/docs" class="navbar-link">Documentación</a></li>
+        <li><a href="/commands" class="navbar-link active">Comandos</a></li>
+        <li><a href="/api/status" class="navbar-link">Estado</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" style="padding: var(--space-2xl) 0;">
+    <div class="container">
+      <h1 class="hero-title" style="font-size: 3rem;">Comandos</h1>
+      <p class="hero-subtitle">
+        Encuentra rápidamente el comando que necesitas
+      </p>
+    </div>
+  </section>
+
+  <!-- Search & Commands -->
+  <section class="section">
+    <div class="container-narrow">
+
+      <!-- Search Bar -->
+      <div class="search-container">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="Buscar comando... (ej: ingreso, presupuesto, saldo)"
+          autocomplete="off"
+        />
+      </div>
+
+      <!-- Commands List -->
+      <div id="commandsList">
+
+        <!-- ayuda -->
+        <div class="command-card" data-tags="ayuda help menu comandos lista">
+          <div class="command-header">
+            <h3 class="command-name">ayuda</h3>
+            <span class="badge badge-info">Básico</span>
+          </div>
+          <p class="command-description">
+            Muestra la lista completa de comandos disponibles directamente en el chat.
+          </p>
+          <div class="command-syntax">ayuda</div>
+          <p style="margin-top: var(--space-sm); font-size: 0.875rem; color: var(--text-tertiary);">
+            También puedes usar: <code>help</code> o <code>menu</code>
+          </p>
+        </div>
+
+        <!-- crear presupuesto -->
+        <div class="command-card" data-tags="crear nuevo presupuesto budget iniciar">
+          <div class="command-header">
+            <h3 class="command-name">crear presupuesto</h3>
+            <span class="badge badge-success">Esencial</span>
+          </div>
+          <p class="command-description">
+            Crea un nuevo presupuesto con un nombre único y opcionalmente un monto inicial.
+          </p>
+          <div class="command-syntax">crear presupuesto &lt;nombre&gt; [monto inicial]</div>
+          <p style="margin-top: var(--space-md); font-weight: 600; font-size: 0.875rem;">Ejemplos:</p>
+          <div class="command-example">crear presupuesto personal 50000</div>
+          <div class="command-example" style="margin-top: var(--space-sm);">nuevo presupuesto vacaciones 100000</div>
+          <div class="command-example" style="margin-top: var(--space-sm);">crear presupuesto "Gastos del hogar"</div>
+        </div>
+
+        <!-- presupuestos -->
+        <div class="command-card" data-tags="presupuestos lista listar todos ver budgets">
+          <div class="command-header">
+            <h3 class="command-name">presupuestos</h3>
+            <span class="badge badge-success">Esencial</span>
+          </div>
+          <p class="command-description">
+            Lista todos tus presupuestos con su saldo actual, ingresos totales y gastos totales.
+          </p>
+          <div class="command-syntax">presupuestos</div>
+          <p style="margin-top: var(--space-sm); font-size: 0.875rem; color: var(--text-tertiary);">
+            También: <code>listar presupuestos</code> o <code>lista de presupuestos</code>
+          </p>
+        </div>
+
+        <!-- saldo / estado -->
+        <div class="command-card" data-tags="saldo estado balance consultar ver presupuesto">
+          <div class="command-header">
+            <h3 class="command-name">saldo / estado</h3>
+            <span class="badge badge-success">Esencial</span>
+          </div>
+          <p class="command-description">
+            Consulta el estado detallado de un presupuesto específico: saldo disponible, ingresos, gastos y último movimiento.
+          </p>
+          <div class="command-syntax">saldo &lt;presupuesto&gt;</div>
+          <p style="margin-top: var(--space-md); font-weight: 600; font-size: 0.875rem;">Ejemplos:</p>
+          <div class="command-example">saldo personal</div>
+          <div class="command-example" style="margin-top: var(--space-sm);">estado vacaciones</div>
+          <div class="command-example" style="margin-top: var(--space-sm);">presupuesto ahorros</div>
+        </div>
+
+        <!-- movimientos -->
+        <div class="command-card" data-tags="movimientos historial transacciones ver ultimos recientes">
+          <div class="command-header">
+            <h3 class="command-name">movimientos</h3>
+            <span class="badge badge-info">Consulta</span>
+          </div>
+          <p class="command-description">
+            Muestra los últimos movimientos (ingresos y gastos) de un presupuesto. Por defecto muestra los últimos 5.
+          </p>
+          <div class="command-syntax">movimientos &lt;presupuesto&gt; [cantidad]</div>
+          <p style="margin-top: var(--space-md); font-weight: 600; font-size: 0.875rem;">Ejemplos:</p>
+          <div class="command-example">movimientos personal</div>
+          <div class="command-example" style="margin-top: var(--space-sm);">movimientos vacaciones 10</div>
+          <div class="command-example" style="margin-top: var(--space-sm);">movimientos "Gastos del hogar" 20</div>
+        </div>
+
+        <!-- ingreso -->
+        <div class="command-card" data-tags="ingreso agregar registrar añadir income positivo dinero">
+          <div class="command-header">
+            <h3 class="command-name">ingreso</h3>
+            <span class="badge badge-success">Esencial</span>
+          </div>
+          <p class="command-description">
+            Registra un ingreso en un presupuesto. Puedes agregar una categoría usando <code>| categoría</code> o <code>#categoría</code>.
+          </p>
+          <div class="command-syntax">ingreso &lt;presupuesto&gt; &lt;monto&gt; &lt;descripción&gt; [| categoría]</div>
+          <p style="margin-top: var(--space-md); font-weight: 600; font-size: 0.875rem;">Ejemplos:</p>
+          <div class="command-example">ingreso personal 50000 Salario de enero</div>
+          <div class="command-example" style="margin-top: var(--space-sm);">ingreso freelance 15000 Proyecto web | trabajo</div>
+          <div class="command-example" style="margin-top: var(--space-sm);">ingreso ahorros 5000 Transferencia mensual #ahorro</div>
+        </div>
+
+        <!-- gasto -->
+        <div class="command-card" data-tags="gasto agregar registrar añadir expense negativo compra pago">
+          <div class="command-header">
+            <h3 class="command-name">gasto</h3>
+            <span class="badge badge-success">Esencial</span>
+          </div>
+          <p class="command-description">
+            Registra un gasto en un presupuesto. Puedes agregar una categoría usando <code>| categoría</code> o <code>#categoría</code>.
+          </p>
+          <div class="command-syntax">gasto &lt;presupuesto&gt; &lt;monto&gt; &lt;descripción&gt; [| categoría]</div>
+          <p style="margin-top: var(--space-md); font-weight: 600; font-size: 0.875rem;">Ejemplos:</p>
+          <div class="command-example">gasto personal 500 Café de la mañana</div>
+          <div class="command-example" style="margin-top: var(--space-sm);">gasto hogar 3500 Supermercado | comida</div>
+          <div class="command-example" style="margin-top: var(--space-sm);">gasto vacaciones 12000 Boletos de avión #transporte</div>
+        </div>
+
+      </div>
+
+      <!-- No Results Message -->
+      <div id="noResults" class="no-results">
+        <div style="font-size: 3rem; margin-bottom: var(--space-md);">🔍</div>
+        <h3 style="font-size: 1.5rem; margin-bottom: var(--space-sm);">No se encontraron comandos</h3>
+        <p>Intenta con otro término de búsqueda</p>
+      </div>
+
+      <!-- Tips -->
+      <div class="card" style="margin-top: var(--space-2xl); background: var(--emerald-50); border-color: var(--emerald-200);">
+        <h3 style="font-size: 1.25rem; margin-bottom: var(--space-md);">💡 Tips de búsqueda</h3>
+        <ul style="color: var(--text-secondary); padding-left: var(--space-lg); line-height: 1.8;">
+          <li>Puedes buscar por nombre del comando: <code>ingreso</code>, <code>gasto</code></li>
+          <li>O por acción: <code>crear</code>, <code>ver</code>, <code>listar</code></li>
+          <li>O por concepto: <code>presupuesto</code>, <code>movimientos</code>, <code>saldo</code></li>
+          <li>Haz clic en cualquier comando para copiarlo al portapapeles</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p style="margin-bottom: var(--space-sm);">
+        <strong>Finance Bot</strong> - Tu asistente financiero personal
+      </p>
+      <p style="font-size: 0.875rem; color: var(--text-tertiary);">
+        <span id="commandCount">7</span> comandos disponibles
+      </p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script>
+    // Búsqueda en tiempo real
+    (function() {
+      const searchInput = document.getElementById('searchInput');
+      const commandCards = document.querySelectorAll('.command-card');
+      const noResults = document.getElementById('noResults');
+
+      searchInput.addEventListener('input', function() {
+        const query = this.value.toLowerCase().trim();
+        let visibleCount = 0;
+
+        commandCards.forEach(card => {
+          const tags = card.getAttribute('data-tags');
+          const text = card.textContent.toLowerCase();
+          const matches = tags.includes(query) || text.includes(query);
+
+          if (query === '' || matches) {
+            card.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+
+        // Mostrar mensaje de "no results" si no hay coincidencias
+        if (visibleCount === 0 && query !== '') {
+          noResults.classList.add('show');
+        } else {
+          noResults.classList.remove('show');
+        }
+      });
+
+      // Focus en el input al cargar
+      searchInput.focus();
+    })();
+  </script>
+</body>
+</html>

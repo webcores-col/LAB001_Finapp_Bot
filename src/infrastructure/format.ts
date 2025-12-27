@@ -1,0 +1,14 @@
+export const formatCurrency = (value: number): string => {
+  return new Intl.NumberFormat('es-CO', {
+    style: 'currency',
+    currency: 'COP',
+    minimumFractionDigits: 0
+  }).format(value);
+};
+
+export const formatDate = (date: Date): string => {
+  return new Intl.DateTimeFormat('es-CO', {
+    dateStyle: 'medium',
+    timeZone: 'America/Bogota'
+  }).format(date);
+};

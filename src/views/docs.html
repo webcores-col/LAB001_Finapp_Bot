@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Documentación completa de Finance Bot - Aprende a usar todos los comandos">
+  <title>Documentación - Finance Bot</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="/" class="navbar-brand">
+        <div class="navbar-logo">💰</div>
+        <span>Finance Bot</span>
+      </a>
+      <ul class="navbar-nav">
+        <li><a href="/" class="navbar-link">Inicio</a></li>
+        <li><a href="/docs" class="navbar-link active">Documentación</a></li>
+        <li><a href="/commands" class="navbar-link">Comandos</a></li>
+        <li><a href="/changelog" class="navbar-link">Changelog</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" style="padding: var(--space-2xl) 0;">
+    <div class="container">
+      <h1 class="hero-title" style="font-size: 3rem;">Documentación</h1>
+      <p class="hero-subtitle">
+        Aprende a usar Finance Bot como un profesional
+      </p>
+    </div>
+  </section>
+
+  <!-- Documentation Content -->
+  <section class="section">
+    <div class="container-narrow">
+
+      <!-- Introduction -->
+      <div class="card mb-xl">
+        <h2 style="font-size: 2rem; margin-bottom: var(--space-md);">¿Qué es Finance Bot?</h2>
+        <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: var(--space-md);">
+          Finance Bot es tu asistente financiero personal que vive en tu app de mensajería favorita.
+          Te permite crear y gestionar múltiples presupuestos, registrar ingresos y gastos,
+          y consultar el estado de tus finanzas en cualquier momento, todo a través de
+          comandos simples en lenguaje natural.
+        </p>
+        <div style="display: flex; gap: var(--space-sm); flex-wrap: wrap;">
+          <span class="badge badge-success">Telegram</span>
+          <span class="badge badge-success">WhatsApp</span>
+          <span class="badge badge-info">Gratis</span>
+          <span class="badge badge-info">Código abierto</span>
+        </div>
+      </div>
+
+      <!-- Getting Started -->
+      <div id="primeros-pasos" style="margin-bottom: var(--space-3xl);">
+        <h2 style="font-size: 2rem; margin-bottom: var(--space-lg);">🚀 Primeros pasos</h2>
+
+        <div class="card mb-lg">
+          <h3 style="font-size: 1.5rem; margin-bottom: var(--space-md);">1. Encuentra el bot</h3>
+
+          <div style="margin-bottom: var(--space-lg);">
+            <h4 style="color: var(--text-secondary); font-size: 1rem; margin-bottom: var(--space-sm);">
+              Para Telegram:
+            </h4>
+            <ul style="color: var(--text-secondary); padding-left: var(--space-lg); line-height: 1.8;">
+              <li>Abre Telegram</li>
+              <li>Busca <code style="background: var(--neutral-100); padding: 2px 6px; border-radius: 4px;">@FinanceBot</code> (o el nombre que hayas configurado)</li>
+              <li>Haz clic en "Start" o envía <code style="background: var(--neutral-100); padding: 2px 6px; border-radius: 4px;">/start</code></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 style="color: var(--text-secondary); font-size: 1rem; margin-bottom: var(--space-sm);">
+              Para WhatsApp:
+            </h4>
+            <ul style="color: var(--text-secondary); padding-left: var(--space-lg); line-height: 1.8;">
+              <li>Guarda el número del bot en tus contactos</li>
+              <li>Envía un mensaje de prueba como <code style="background: var(--neutral-100); padding: 2px 6px; border-radius: 4px;">ayuda</code></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card mb-lg">
+          <h3 style="font-size: 1.5rem; margin-bottom: var(--space-md);">2. Tu primer presupuesto</h3>
+          <p style="color: var(--text-secondary); margin-bottom: var(--space-md); line-height: 1.8;">
+            Lo primero que necesitas es crear un presupuesto. Puedes tener tantos como quieras:
+            uno para gastos personales, otro para vacaciones, otro para ahorros, etc.
+          </p>
+
+          <div class="command-example" style="margin-bottom: var(--space-md);">
+            crear presupuesto personal 50000
+          </div>
+
+          <p style="color: var(--text-secondary); line-height: 1.8;">
+            Esto crea un presupuesto llamado "personal" con un saldo inicial de $50,000.
+            El saldo inicial es opcional - si no lo especificas, empezará en $0.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="font-size: 1.5rem; margin-bottom: var(--space-md);">3. Registra movimientos</h3>
+          <p style="color: var(--text-secondary); margin-bottom: var(--space-md); line-height: 1.8;">
+            Ahora puedes empezar a registrar tus ingresos y gastos:
+          </p>
+
+          <div style="display: flex; flex-direction: column; gap: var(--space-md);">
+            <div>
+              <p style="font-weight: 600; margin-bottom: var(--space-sm);">Registrar un ingreso:</p>
+              <div class="command-example">
+                ingreso personal 10000 Salario quincenal
+              </div>
+            </div>
+
+            <div>
+              <p style="font-weight: 600; margin-bottom: var(--space-sm);">Registrar un gasto:</p>
+              <div class="command-example">
+                gasto personal 500 Café del martes
+              </div>
+            </div>
+
+            <div>
+              <p style="font-weight: 600; margin-bottom: var(--space-sm);">Con categoría:</p>
+              <div class="command-example">
+                gasto personal 3500 Compra semanal | comida
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Commands Reference -->
+      <div id="comandos" style="margin-bottom: var(--space-3xl);">
+        <h2 style="font-size: 2rem; margin-bottom: var(--space-lg);">📖 Referencia de comandos</h2>
+
+        <!-- Help Command -->
+        <div class="card mb-lg">
+          <h3 style="font-size: 1.5rem; margin-bottom: var(--space-md); color: var(--primary);">ayuda</h3>
+          <p style="color: var(--text-secondary); margin-bottom: var(--space-md);">
+            Muestra la lista completa de comandos disponibles.
+          </p>
+          <div class="command-example">ayuda</div>
+        </div>
+
+        <!-- Create Budget -->
+        <div class="card mb-lg">
+          <h3 style="font-size: 1.5rem; margin-bottom: var(--space-md); color: var(--primary);">
+            crear presupuesto
+          </h3>
+          <p style="color: var(--text-secondary); margin-bottom: var(--space-md);">
+            Crea un nuevo presupuesto con un nombre y opcionalmente un monto inicial.
+          </p>
+
+          <p style="font-weight: 600; margin-bottom: var(--space-sm);">Sintaxis:</p>
+          <div class="command-syntax mb-md">crear presupuesto &lt;nombre&gt; [monto inicial]</div>
+
+          <p style="font-weight: 600; margin-bottom: var(--space-sm);">Ejemplos:</p>
+          <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
+            <div class="command-example">crear presupuesto vacaciones 100000</div>
+            <div class="command-example">crear presupuesto "Gastos del hogar" 50000</div>
+            <div class="command-example">nuevo presupuesto ahorros</div>
+          </div>
+
+          <div style="margin-top: var(--space-md); padding: var(--space-md); background: var(--emerald-50); border-radius: var(--radius-sm); border-left: 3px solid var(--emerald-500);">
+            <p style="font-size: 0.875rem; color: var(--emerald-800);">
+              <strong>💡 Tip:</strong> Si el nombre tiene espacios, envuélvelo entre comillas.
+            </p>
+          </div>
+        </div>
+
+        <!-- List Budgets -->
+        <div class="card mb-lg">
+          <h3 style="font-size: 1.5rem; margin-bottom: var(--space-md); color: var(--primary);">
+            presupuestos
+          </h3>
+          <p style="color: var(--text-secondary); margin-bottom: var(--space-md);">
+            Muestra todos tus presupuestos con su saldo actual, ingresos totales y gastos totales.
+          </p>
+          <div class="command-example">presupuestos</div>
+        </div>
+
+        <!-- Budget Status -->
+        <div class="card mb-lg">
+          <h3 style="font-size: 1.5rem; margin-bottom: var(--space-md); color: var(--primary);">
+            saldo / estado
+          </h3>
+          <p style="color: var(--text-secondary); margin-bottom: var(--space-md);">
+            Consulta el estado detallado de un presupuesto específico.
+          </p>
+
+          <p style="font-weight: 600; margin-bottom: var(--space-sm);">Sintaxis:</p>
+          <div class="command-syntax mb-md">saldo &lt;presupuesto&gt;</div>
+
+          <p style="font-weight: 600; margin-bottom: var(--space-sm);">Ejemplos:</p>
+          <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
+            <div class="command-example">saldo personal</div>
+            <div class="command-example">estado vacaciones</div>
+            <div class="command-example">presupuesto ahorros</div>
+          </div>
+        </div>
+
+        <!-- List Movements -->
+        <div class="card mb-lg">
+          <h3 style="font-size: 1.5rem; margin-bottom: var(--space-md); color: var(--primary);">
+            movimientos
+          </h3>
+          <p style="color: var(--text-secondary); margin-bottom: var(--space-md);">
+            Muestra los últimos movimientos (ingresos y gastos) de un presupuesto.
+            Por defecto muestra los últimos 5, pero puedes especificar otro número.
+          </p>
+
+          <p style="font-weight: 600; margin-bottom: var(--space-sm);">Sintaxis:</p>
+          <div class="command-syntax mb-md">movimientos &lt;presupuesto&gt; [cantidad]</div>
+
+          <p style="font-weight: 600; margin-bottom: var(--space-sm);">Ejemplos:</p>
+          <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
+            <div class="command-example">movimientos personal</div>
+            <div class="command-example">movimientos vacaciones 10</div>
+          </div>
+        </div>
+
+        <!-- Add Income -->
+        <div class="card mb-lg">
+          <h3 style="font-size: 1.5rem; margin-bottom: var(--space-md); color: var(--primary);">
+            ingreso
+          </h3>
+          <p style="color: var(--text-secondary); margin-bottom: var(--space-md);">
+            Registra un ingreso en un presupuesto.
+          </p>
+
+          <p style="font-weight: 600; margin-bottom: var(--space-sm);">Sintaxis:</p>
+          <div class="command-syntax mb-md">ingreso &lt;presupuesto&gt; &lt;monto&gt; &lt;descripción&gt; [| categoría]</div>
+
+          <p style="font-weight: 600; margin-bottom: var(--space-sm);">Ejemplos:</p>
+          <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
+            <div class="command-example">ingreso personal 50000 Salario de enero</div>
+            <div class="command-example">ingreso freelance 15000 Proyecto web | trabajo</div>
+            <div class="command-example">ingreso ahorros 5000 Transferencia mensual</div>
+          </div>
+
+          <div style="margin-top: var(--space-md); padding: var(--space-md); background: var(--emerald-50); border-radius: var(--radius-sm); border-left: 3px solid var(--emerald-500);">
+            <p style="font-size: 0.875rem; color: var(--emerald-800);">
+              <strong>💡 Tip:</strong> Usa <code>| categoría</code> al final o <code>#categoría</code> en la descripción para categorizar.
+            </p>
+          </div>
+        </div>
+
+        <!-- Add Expense -->
+        <div class="card mb-lg">
+          <h3 style="font-size: 1.5rem; margin-bottom: var(--space-md); color: var(--primary);">
+            gasto
+          </h3>
+          <p style="color: var(--text-secondary); margin-bottom: var(--space-md);">
+            Registra un gasto en un presupuesto.
+          </p>
+
+          <p style="font-weight: 600; margin-bottom: var(--space-sm);">Sintaxis:</p>
+          <div class="command-syntax mb-md">gasto &lt;presupuesto&gt; &lt;monto&gt; &lt;descripción&gt; [| categoría]</div>
+
+          <p style="font-weight: 600; margin-bottom: var(--space-sm);">Ejemplos:</p>
+          <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
+            <div class="command-example">gasto personal 500 Café de la mañana</div>
+            <div class="command-example">gasto hogar 3500 Supermercado | comida</div>
+            <div class="command-example">gasto vacaciones 12000 Boletos de avión #transporte</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tips & Tricks -->
+      <div id="tips" style="margin-bottom: var(--space-3xl);">
+        <h2 style="font-size: 2rem; margin-bottom: var(--space-lg);">💡 Tips y trucos</h2>
+
+        <div class="grid grid-2">
+          <div class="card">
+            <h3 style="font-size: 1.25rem; margin-bottom: var(--space-md);">Usa nombres descriptivos</h3>
+            <p style="color: var(--text-secondary);">
+              En lugar de "p1" o "p2", usa nombres claros como "personal", "vacaciones",
+              "emergencias". Te ayudará a identificarlos rápidamente.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: 1.25rem; margin-bottom: var(--space-md);">Categoriza tus gastos</h3>
+            <p style="color: var(--text-secondary);">
+              Usa categorías como "comida", "transporte", "entretenimiento" para
+              analizar mejor tus patrones de gasto.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: 1.25rem; margin-bottom: var(--space-md);">Sé consistente</h3>
+            <p style="color: var(--text-secondary);">
+              Registra tus gastos inmediatamente después de hacerlos. No esperes
+              al final del día o se te olvidarán.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: 1.25rem; margin-bottom: var(--space-md);">Revisa semanalmente</h3>
+            <p style="color: var(--text-secondary);">
+              Consulta tus movimientos cada semana con el comando "movimientos"
+              para mantener control de tu situación financiera.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div id="faq" style="margin-bottom: var(--space-3xl);">
+        <h2 style="font-size: 2rem; margin-bottom: var(--space-lg);">❓ Preguntas frecuentes</h2>
+
+        <div class="card mb-md">
+          <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm);">
+            ¿Cuántos presupuestos puedo crear?
+          </h3>
+          <p style="color: var(--text-secondary);">
+            No hay límite. Puedes crear tantos presupuestos como necesites para
+            organizar tus finanzas de la manera que prefieras.
+          </p>
+        </div>
+
+        <div class="card mb-md">
+          <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm);">
+            ¿Mis datos están seguros?
+          </h3>
+          <p style="color: var(--text-secondary);">
+            Sí. Cada usuario tiene sus datos completamente aislados. Nadie más
+            puede ver tus presupuestos o movimientos, ni siquiera otros usuarios del bot.
+          </p>
+        </div>
+
+        <div class="card mb-md">
+          <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm);">
+            ¿Puedo editar o eliminar movimientos?
+          </h3>
+          <p style="color: var(--text-secondary);">
+            Actualmente no hay comandos para editar o eliminar movimientos.
+            Asegúrate de verificar los montos antes de enviarlos.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm);">
+            ¿Hay límite de mensajes?
+          </h3>
+          <p style="color: var(--text-secondary);">
+            El bot tiene un límite de 10 mensajes por minuto por usuario para
+            prevenir spam. Es más que suficiente para uso normal.
+          </p>
+        </div>
+      </div>
+
+      <!-- Support -->
+      <div class="card" style="background: var(--emerald-50); border-color: var(--emerald-200);">
+        <h2 style="font-size: 1.5rem; margin-bottom: var(--space-md);">¿Necesitas ayuda?</h2>
+        <p style="color: var(--text-secondary); margin-bottom: var(--space-md);">
+          Si tienes problemas o preguntas, recuerda que siempre puedes enviar
+          el comando <code style="background: white; padding: 2px 6px; border-radius: 4px;">ayuda</code>
+          al bot para ver todos los comandos disponibles.
+        </p>
+        <a href="/commands" class="btn btn-primary">Ver lista completa de comandos</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p style="margin-bottom: var(--space-sm);">
+        <strong>Finance Bot</strong> - Tu asistente financiero personal
+      </p>
+      <p style="font-size: 0.875rem; color: var(--text-tertiary);">
+        Hecho con 💚 para ayudarte a gestionar mejor tu dinero
+      </p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

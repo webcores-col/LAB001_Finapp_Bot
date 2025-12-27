@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Historial de cambios y mejoras de Finance Bot">
+  <title>Changelog - Finance Bot</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    .changelog-item {
+      border-left: 3px solid var(--primary);
+      padding-left: var(--space-lg);
+      margin-bottom: var(--space-2xl);
+      position: relative;
+    }
+
+    .changelog-item::before {
+      content: '';
+      position: absolute;
+      left: -7px;
+      top: 0;
+      width: 11px;
+      height: 11px;
+      background: var(--primary);
+      border-radius: var(--radius-full);
+      border: 2px solid var(--background);
+    }
+
+    .changelog-version {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: var(--space-xs) var(--space-md);
+      border-radius: var(--radius-full);
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: var(--space-sm);
+    }
+
+    .changelog-date {
+      color: var(--text-tertiary);
+      font-size: 0.875rem;
+      margin-bottom: var(--space-md);
+    }
+
+    .changelog-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: var(--space-md);
+      color: var(--text-primary);
+    }
+
+    .change-type {
+      display: inline-block;
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-right: var(--space-xs);
+    }
+
+    .change-type.feature {
+      background: var(--emerald-100);
+      color: var(--emerald-700);
+    }
+
+    .change-type.fix {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    .change-type.improvement {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+
+    .change-type.security {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .change-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .change-list li {
+      padding: var(--space-sm) 0;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="/" class="navbar-brand">
+        <div class="navbar-logo">💰</div>
+        <span>Finance Bot</span>
+      </a>
+      <ul class="navbar-nav">
+        <li><a href="/" class="navbar-link">Inicio</a></li>
+        <li><a href="/docs" class="navbar-link">Documentación</a></li>
+        <li><a href="/commands" class="navbar-link">Comandos</a></li>
+        <li><a href="/changelog" class="navbar-link active">Changelog</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" style="padding: var(--space-2xl) 0;">
+    <div class="container">
+      <h1 class="hero-title" style="font-size: 3rem;">Changelog</h1>
+      <p class="hero-subtitle">
+        Historial de cambios, mejoras y nuevas funcionalidades
+      </p>
+    </div>
+  </section>
+
+  <!-- Changelog -->
+  <section class="section">
+    <div class="container-narrow">
+
+      <!-- Version 1.1.0 - Mejoras V2 -->
+      <div class="changelog-item">
+        <span class="changelog-version">v1.1.0</span>
+        <div class="changelog-date">Octubre 14, 2025</div>
+        <h2 class="changelog-title">Mejoras Críticas de Producción</h2>
+        <p style="color: var(--text-secondary); margin-bottom: var(--space-lg);">
+          Actualización mayor enfocada en seguridad, escalabilidad y experiencia de usuario.
+        </p>
+
+        <ul class="change-list">
+          <li>
+            <span class="change-type security">Seguridad</span>
+            <strong>Aislamiento de usuarios:</strong> Cada usuario ahora tiene sus propios presupuestos
+            completamente aislados. Privacidad y seguridad garantizadas.
+          </li>
+          <li>
+            <span class="change-type security">Seguridad</span>
+            <strong>Rate limiting mejorado:</strong> Sistema de límite de peticiones con ventana
+            deslizante (10 mensajes por minuto). Incluye limpieza automática de memoria.
+          </li>
+          <li>
+            <span class="change-type security">Seguridad</span>
+            <strong>Validación de configuración con Zod:</strong> La aplicación valida todas las
+            variables de entorno al iniciar. Fail-fast con mensajes claros de error.
+          </li>
+          <li>
+            <span class="change-type feature">Nuevo</span>
+            <strong>Web de documentación:</strong> Interfaz web minimalista estilo iOS 18 con
+            documentación completa, ejemplos interactivos y búsqueda en vivo.
+          </li>
+          <li>
+            <span class="change-type feature">Nuevo</span>
+            <strong>API de status:</strong> Endpoint <code>/api/status</code> para monitoreo
+            del estado del bot en tiempo real.
+          </li>
+          <li>
+            <span class="change-type improvement">Mejora</span>
+            <strong>Auto-registro de usuarios:</strong> Los usuarios se crean automáticamente
+            al enviar su primer mensaje. Sin formularios, experiencia fluida.
+          </li>
+          <li>
+            <span class="change-type improvement">Mejora</span>
+            <strong>Tracking de última interacción:</strong> El sistema registra la última vez
+            que cada usuario interactuó con el bot.
+          </li>
+          <li>
+            <span class="change-type fix">Fix</span>
+            <strong>Módulos ESM:</strong> Corrección de imports para compatibilidad total con
+            Node.js ESM (type: "module").
+          </li>
+        </ul>
+      </div>
+
+      <!-- Version 1.0.0 - Release Inicial -->
+      <div class="changelog-item">
+        <span class="changelog-version">v1.0.0</span>
+        <div class="changelog-date">Septiembre 16, 2025</div>
+        <h2 class="changelog-title">Lanzamiento Inicial</h2>
+        <p style="color: var(--text-secondary); margin-bottom: var(--space-lg);">
+          Primera versión estable de Finance Bot con funcionalidades core completas.
+        </p>
+
+        <ul class="change-list">
+          <li>
+            <span class="change-type feature">Nuevo</span>
+            <strong>Múltiples presupuestos:</strong> Crea y gestiona tantos presupuestos como necesites.
+          </li>
+          <li>
+            <span class="change-type feature">Nuevo</span>
+            <strong>Registro de ingresos y gastos:</strong> Comandos simples para registrar
+            movimientos financieros.
+          </li>
+          <li>
+            <span class="change-type feature">Nuevo</span>
+            <strong>Categorización:</strong> Organiza tus movimientos con categorías y hashtags.
+          </li>
+          <li>
+            <span class="change-type feature">Nuevo</span>
+            <strong>Consultas en tiempo real:</strong> Revisa el estado de tus presupuestos
+            y movimientos instantáneamente.
+          </li>
+          <li>
+            <span class="change-type feature">Nuevo</span>
+            <strong>Multi-plataforma:</strong> Soporte completo para Telegram y WhatsApp.
+          </li>
+          <li>
+            <span class="change-type feature">Nuevo</span>
+            <strong>Parser conversacional:</strong> Usa lenguaje natural para interactuar con el bot.
+          </li>
+          <li>
+            <span class="change-type feature">Nuevo</span>
+            <strong>MongoDB backend:</strong> Base de datos escalable y confiable.
+          </li>
+          <li>
+            <span class="change-type feature">Nuevo</span>
+            <strong>Arquitectura modular:</strong> Diseño limpio con Domain-Driven Design.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Roadmap -->
+      <div class="card" style="background: var(--neutral-50); border: 2px dashed var(--border);">
+        <h3 style="font-size: 1.5rem; margin-bottom: var(--space-md);">🚀 Próximamente</h3>
+        <p style="color: var(--text-secondary); margin-bottom: var(--space-md);">
+          Funcionalidades planificadas para futuras versiones:
+        </p>
+        <ul style="color: var(--text-secondary); padding-left: var(--space-lg); line-height: 1.8;">
+          <li>Reportes mensuales automáticos</li>
+          <li>Metas de ahorro con seguimiento de progreso</li>
+          <li>Alertas cuando te acerques al límite de un presupuesto</li>
+          <li>Exportación de datos a CSV/Excel</li>
+          <li>Gráficas y visualizaciones de gastos</li>
+          <li>Recordatorios programados</li>
+          <li>Soporte para múltiples monedas</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p style="margin-bottom: var(--space-sm);">
+        <strong>Finance Bot</strong> - Tu asistente financiero personal
+      </p>
+      <p style="font-size: 0.875rem; color: var(--text-tertiary);">
+        Versión actual: <strong>v1.1.0</strong>
+      </p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

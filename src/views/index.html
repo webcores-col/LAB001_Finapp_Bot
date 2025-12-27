@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bot de finanzas personales para WhatsApp y Telegram. Controla tus presupuestos, ingresos y gastos de forma simple.">
+  <title>Finance Bot - Tu asistente financiero personal</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="/" class="navbar-brand">
+        <div class="navbar-logo">💰</div>
+        <span>Finance Bot</span>
+      </a>
+      <ul class="navbar-nav">
+        <li><a href="/" class="navbar-link active">Inicio</a></li>
+        <li><a href="/docs" class="navbar-link">Documentación</a></li>
+        <li><a href="/commands" class="navbar-link">Comandos</a></li>
+        <li><a href="/changelog" class="navbar-link">Changelog</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-title">
+        Tu asistente financiero<br/>personal en tu mensajería
+      </h1>
+      <p class="hero-subtitle">
+        Controla tus presupuestos, registra ingresos y gastos,
+        y mantén el control de tus finanzas directamente desde
+        WhatsApp o Telegram.
+      </p>
+      <div class="hero-actions">
+        <a href="/docs" class="btn btn-primary">
+          <span>Comenzar</span>
+          <span>→</span>
+        </a>
+        <a href="/commands" class="btn btn-secondary">
+          Ver comandos
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">¿Por qué Finance Bot?</h2>
+      <p class="section-subtitle">
+        Gestiona tus finanzas de forma simple, rápida y desde donde estés.
+      </p>
+
+      <div class="grid grid-3">
+        <!-- Feature 1 -->
+        <div class="card">
+          <div class="card-icon">📊</div>
+          <h3 class="card-title">Múltiples presupuestos</h3>
+          <p class="card-description">
+            Crea presupuestos separados para diferentes objetivos:
+            hogar, vacaciones, ahorros, o cualquier categoría que necesites.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="card">
+          <div class="card-icon">💬</div>
+          <h3 class="card-title">Conversacional y simple</h3>
+          <p class="card-description">
+            Usa lenguaje natural para registrar movimientos. Sin apps
+            complicadas, solo envía un mensaje y listo.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="card">
+          <div class="card-icon">🔒</div>
+          <h3 class="card-title">Privado y seguro</h3>
+          <p class="card-description">
+            Tus datos están aislados y protegidos. Solo tú tienes
+            acceso a tu información financiera.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="card">
+          <div class="card-icon">📱</div>
+          <h3 class="card-title">Multi-plataforma</h3>
+          <p class="card-description">
+            Disponible en Telegram y WhatsApp. Usa el bot desde
+            la plataforma que prefieras.
+          </p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <h3 class="card-title">Respuestas instantáneas</h3>
+          <p class="card-description">
+            Consulta el estado de tus presupuestos en segundos.
+            Sin esperas, sin complicaciones.
+          </p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="card">
+          <div class="card-icon">🏷️</div>
+          <h3 class="card-title">Categorías automáticas</h3>
+          <p class="card-description">
+            Organiza tus gastos con categorías y hashtags.
+            Analiza en qué gastas más fácilmente.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it Works Section -->
+  <section class="section" style="background: var(--neutral-50);">
+    <div class="container-narrow">
+      <h2 class="section-title">Cómo funciona</h2>
+
+      <div class="grid grid-2" style="gap: var(--space-2xl);">
+        <!-- Step 1 -->
+        <div style="text-align: center;">
+          <div style="
+            width: 64px;
+            height: 64px;
+            background: var(--emerald-100);
+            color: var(--emerald-600);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 auto var(--space-md);
+          ">1</div>
+          <h3 class="card-title mb-sm">Abre tu app de mensajería</h3>
+          <p class="text-muted">
+            Busca nuestro bot en Telegram o WhatsApp
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div style="text-align: center;">
+          <div style="
+            width: 64px;
+            height: 64px;
+            background: var(--emerald-100);
+            color: var(--emerald-600);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 auto var(--space-md);
+          ">2</div>
+          <h3 class="card-title mb-sm">Crea tu primer presupuesto</h3>
+          <p class="text-muted">
+            Envía: <code style="background: var(--neutral-100); padding: 2px 6px; border-radius: 4px;">crear presupuesto personal 50000</code>
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div style="text-align: center;">
+          <div style="
+            width: 64px;
+            height: 64px;
+            background: var(--emerald-100);
+            color: var(--emerald-600);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 auto var(--space-md);
+          ">3</div>
+          <h3 class="card-title mb-sm">Registra tus movimientos</h3>
+          <p class="text-muted">
+            Ingresa gastos e ingresos con comandos simples
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div style="text-align: center;">
+          <div style="
+            width: 64px;
+            height: 64px;
+            background: var(--emerald-100);
+            color: var(--emerald-600);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 auto var(--space-md);
+          ">4</div>
+          <h3 class="card-title mb-sm">Consulta tu estado</h3>
+          <p class="text-muted">
+            Revisa tu saldo y movimientos cuando quieras
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Start Section -->
+  <section class="section">
+    <div class="container-narrow">
+      <h2 class="section-title">Ejemplos rápidos</h2>
+
+      <div style="display: flex; flex-direction: column; gap: var(--space-md);">
+        <div class="command-item">
+          <div class="command-syntax">ayuda</div>
+          <p class="command-description">Muestra todos los comandos disponibles</p>
+        </div>
+
+        <div class="command-item">
+          <div class="command-syntax">crear presupuesto vacaciones 100000</div>
+          <p class="command-description">Crea un nuevo presupuesto llamado "vacaciones" con $100,000 inicial</p>
+        </div>
+
+        <div class="command-item">
+          <div class="command-syntax">ingreso personal 50000 Salario mensual</div>
+          <p class="command-description">Registra un ingreso de $50,000 en el presupuesto "personal"</p>
+        </div>
+
+        <div class="command-item">
+          <div class="command-syntax">gasto personal 3500 Supermercado | comida</div>
+          <p class="command-description">Registra un gasto de $3,500 con categoría "comida"</p>
+        </div>
+
+        <div class="command-item">
+          <div class="command-syntax">saldo personal</div>
+          <p class="command-description">Consulta el estado actual de tu presupuesto "personal"</p>
+        </div>
+      </div>
+
+      <div class="text-center" style="margin-top: var(--space-2xl);">
+        <a href="/commands" class="btn btn-primary">Ver todos los comandos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section" style="background: linear-gradient(135deg, var(--emerald-500), var(--emerald-600)); color: white;">
+    <div class="container text-center">
+      <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: var(--space-md); color: white;">
+        ¿Listo para tomar control de tus finanzas?
+      </h2>
+      <p style="font-size: 1.25rem; margin-bottom: var(--space-2xl); opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;">
+        Comienza a usar Finance Bot hoy mismo. Es gratis y súper fácil de usar.
+      </p>
+      <div class="hero-actions">
+        <a href="/docs" class="btn" style="background: white; color: var(--emerald-600);">
+          <span>Comenzar ahora</span>
+          <span>→</span>
+        </a>
+        <a href="/commands" class="btn" style="background: rgba(255,255,255,0.2); color: white; border: 2px solid white;">
+          Ver documentación
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p style="margin-bottom: var(--space-sm);">
+        <strong>Finance Bot</strong> - Tu asistente financiero personal
+      </p>
+      <p style="font-size: 0.875rem; color: var(--text-tertiary);">
+        Hecho con 💚 para ayudarte a gestionar mejor tu dinero
+      </p>
+      <p style="margin-top: var(--space-md); font-size: 0.875rem;">
+        <span class="badge badge-success">
+          <span class="status-dot"></span>
+          <span>Bot activo</span>
+        </span>
+      </p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
